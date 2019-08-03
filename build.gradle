@@ -5,7 +5,7 @@ plugins {
 
 apply plugin: 'io.spring.dependency-management'
 
-group = 'com.programmerfriend'
+group = 'com.programmerFriend'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
@@ -17,6 +17,6 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-cache'
 	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 	compileOnly 'org.projectlombok:lombok'
-	compile "org.slf4j:log4j-over-slf4j:1.7.25"
+//	compile "org.slf4j:log4j-over-slf4j:1.7.25"
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }

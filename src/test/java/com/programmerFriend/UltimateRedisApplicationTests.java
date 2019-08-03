@@ -1,4 +1,4 @@
-package com.programmerfriend;
+package com.programmerFriend;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

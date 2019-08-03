@@ -1,4 +1,4 @@
-package com.programmerfriend.com.programmerfriend.config;
+package com.programmerFriend.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

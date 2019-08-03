@@ -1,4 +1,4 @@
-package com.programmerfriend.com.programmerfriend.config;
+package com.programmerFriend.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
