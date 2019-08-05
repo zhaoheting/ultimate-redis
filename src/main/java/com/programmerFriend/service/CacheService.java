@@ -12,20 +12,14 @@ import org.springframework.stereotype.Service;
 public class CacheService {
     private static final Logger LOGGER = LoggerFactory.getLogger(CacheService.class);
 
-    private static final String CONTROLLED_PREFIX = "myControlledPrefix_";
-
-    public String generateCacheKey(String relevant) {
-        return CONTROLLED_PREFIX + relevant;
+    @Cacheable(cacheNames = "myCache", key = "'myControlledPrefix_'.concat(#relevant)")
+    public String cacheThis(String relevant, String irrelevantTrackingId) {
+        LOGGER.info("Returning NOT from cache. irrelevant string:{}", irrelevantTrackingId);
+        return relevant;
     }
 
-    @Cacheable(cacheNames = "myCache", key = "T(com.programmerFriend.service).generateCacheKey(#relevant)")
-    public String cacheThis(String relevant) {
-        LOGGER.info("Returning NOT from cache!");
-        return "this Is it" + relevant;
-    }
-
-    @CacheEvict(cacheNames = "myCache")
-    public void forgetAboutThis() {
-        log.info("Forgetting everything about this!");
+    @CacheEvict(cacheNames = "myCache", key = "'myControlledPrefix_'.concat(#relevant)")
+    public void forgetAboutThis(String relevant) {
+        log.info("Forgetting everything about this relevant: '{}'!", relevant);
     }
 }
