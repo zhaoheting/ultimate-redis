@@ -7,8 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.data.redis.core.RedisTemplate;
 
+import java.nio.charset.StandardCharsets;
 import java.util.UUID;
 
 @SpringBootApplication
@@ -31,7 +34,6 @@ public class UltimateRedisApplication implements CommandLineRunner {
         log.info("User Name is: {}", userName);
         String userName2 = cacheService.cacheThis(configService.getUserName(), UUID.randomUUID().toString());
         log.info("User Name is: {}", userName2);
-
         String age = cacheService.cacheThis(String.valueOf(configService.getAge()), UUID.randomUUID().toString());
         log.info("Age is: {}", age);
         log.info("Clearing all cache entries:");
