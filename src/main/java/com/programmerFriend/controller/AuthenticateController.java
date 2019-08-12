@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AuthenticateController {
 
-    @RequestMapping()
+    @RequestMapping(value = "/login")
     public void test(){
 
     }
