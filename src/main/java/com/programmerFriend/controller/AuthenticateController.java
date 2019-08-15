@@ -11,4 +11,8 @@ public class AuthenticateController {
 
     }
 
+    @RequestMapping()
+    public void test2(){
+
+    }
 }
