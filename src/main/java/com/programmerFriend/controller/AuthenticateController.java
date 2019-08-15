@@ -12,6 +12,7 @@ public class AuthenticateController {
 
     }
 
+    //test branch
     @RequestMapping("")
     public void test2(){
 
